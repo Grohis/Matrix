@@ -1,0 +1,30 @@
+# Считываем размеры матрицы
+n = int(input())  # Вводим количество строк матрицы
+m = int(input())  # Вводим количество столбцов матрицы
+
+# Считываем все элементы матрицы
+elements = [input() for _ in range(n * m)]
+
+# Формируем матрицу
+matrix = []
+for i in range(n):
+    # Для каждой строки берем по m элементов из списка elements
+    row = elements[i * m:(i + 1) * m]
+    matrix.append(row)  # Добавляем строку в матрицу
+
+# Выводим оригинальную матрицу
+for row in matrix:
+    print(" ".join(row))  # Преобразуем список строк row в одну строку с элементами, разделенными пробелом, и выводим
+
+# Печатаем пустую строку
+print()
+
+# Формируем транспонированную матрицу
+transposed_matrix = []
+for j in range(m):
+    transposed_row = [matrix[i][j] for i in range(n)]
+    transposed_matrix.append(transposed_row)
+
+# Выводим транспонированную матрицу
+for row in transposed_matrix:
+    print(" ".join(row))  # Преобразуем список строк row в одну строку с элементами, разделенными пробелом, и выводим
