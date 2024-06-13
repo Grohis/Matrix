@@ -1,0 +1,16 @@
+# Считываем размеры матрицы
+n = int(input())
+m = int(input())
+
+# Считываем элементы матрицы
+elements = [input() for _ in range(n * m)]
+
+# Формируем матрицу
+matrix = []
+for i in range(n):
+    row = elements[i * m:(i + 1) * m]
+    matrix.append(row)
+
+# Выводим матрицу
+for row in matrix:
+    print(" ".join(row))
