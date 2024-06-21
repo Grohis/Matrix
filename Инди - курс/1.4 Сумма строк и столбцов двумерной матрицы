@@ -1,0 +1,25 @@
+N, M = map(int, input().split())
+matrix = []
+
+# Заполнение матрицы
+for _ in range(N):
+    row = list(map(int, input().split()))
+    matrix.append(row)
+
+# Инициализация списков для сумм строк и столбцов
+sm_row = [0] * N  # Суммы по строкам
+sm_colm = [0] * M  # Суммы по столбцам
+
+# Подсчет суммы в строках
+for i in range(N):
+    for j in range(M):
+        sm_row[i] += matrix[i][j]
+
+# Подсчет суммы в столбцах
+for j in range(M):
+    for i in range(N):
+        sm_colm[j] += matrix[i][j]
+
+# Вывод результатов
+print(*sm_row)
+print(*sm_colm)
