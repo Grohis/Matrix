@@ -1,0 +1,14 @@
+size_matrix = int(input("Введите размер матрицы: ")) 
+matrix = []
+
+''' Заполнение матрицы '''
+for i in range(size_matrix):
+    row = list(map(int, input(f"Введите элементы {i+1}-й строки через пробел: ").split()))
+    matrix.append(row)
+
+''' Суммирование элементов главной диагонали '''
+sm = 0
+for i in range(size_matrix):
+    sm += matrix[i][i]
+
+print("Сумма элементов на главной диагонали:", sm)
